@@ -22,13 +22,13 @@ const HeroSection = () => {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-4 sm:px-8">
         <div className="max-w-2xl">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-heading text-5xl md:text-7xl font-bold leading-[1.1] mb-6"
+            className="font-heading text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6"
           >
             {t("hero.title1")}{" "}
             <br />
