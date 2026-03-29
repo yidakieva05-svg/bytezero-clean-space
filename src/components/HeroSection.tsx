@@ -5,9 +5,9 @@ const HeroSection = () => {
   const { t } = useLang();
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 px-4 sm:px-0 overflow-hidden">
       <motion.div
-        className="absolute top-32 right-20 w-16 h-16 bg-primary/20 rounded-sm"
+        className="absolute top-32 right-4 sm:right-20 w-10 sm:w-16 h-10 sm:h-16 bg-primary/20 rounded-sm hidden sm:block"
         animate={{ rotate: [0, 90, 90, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
