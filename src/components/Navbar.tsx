@@ -4,8 +4,7 @@ import logo from "@/assets/logo.svg";
 const navLinks = [
   { label: "За нас", href: "#about" },
   { label: "Услуги", href: "#services" },
-  { label: "Е-mail", href: "#email" },
-  { label: "Контакти", href: "#contact" },
+  { label: "Контакти", href: "/contact" },
 ];
 
 const Navbar = () => {

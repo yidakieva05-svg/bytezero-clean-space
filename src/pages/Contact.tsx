@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import { ArrowLeft, Send } from "lucide-react";
+import { ArrowLeft, Send, Phone, Mail } from "lucide-react";
 
 const Contact = () => {
   const navigate = useNavigate();
