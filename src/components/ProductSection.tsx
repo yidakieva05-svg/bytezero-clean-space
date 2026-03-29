@@ -18,7 +18,7 @@ const ProductSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-3xl md:text-5xl font-bold text-center mb-12"
+          className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8 sm:mb-12"
         >
           {t("product.title1")} <span className="text-primary">{t("product.title2")}</span>
         </motion.h2>
