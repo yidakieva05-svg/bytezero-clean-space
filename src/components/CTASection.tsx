@@ -5,7 +5,7 @@ const CTASection = () => {
   const { t } = useLang();
 
   return (
-    <section id="cta" className="relative py-28 overflow-hidden">
+    <section id="cta" className="relative py-16 sm:py-28 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 -translate-y-[99%]">
         <svg viewBox="0 0 1440 100" fill="none" className="w-full">
           <path d="M0,0 Q720,100 1440,0 L1440,100 L0,100 Z" fill="hsl(140 20% 12%)" />
