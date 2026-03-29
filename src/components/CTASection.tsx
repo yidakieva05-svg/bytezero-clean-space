@@ -25,7 +25,7 @@ const CTASection = () => {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container mx-auto px-8 relative z-10 text-center">
+      <div className="container mx-auto px-4 sm:px-8 relative z-10 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
