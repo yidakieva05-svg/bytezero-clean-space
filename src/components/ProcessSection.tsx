@@ -27,7 +27,7 @@ const ProcessSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-3xl md:text-4xl font-bold text-center mb-20"
+          className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 sm:mb-20"
         >
           {t("process.title1")}
           <br />
