@@ -33,7 +33,7 @@ const translations = {
     en: " that unnecessarily burden your organization's servers. Through automated analysis, we identify digital waste and offer a clear action plan.",
   },
   "product.co2.title": { bg: "Намаляване на CO₂", en: "CO₂ Reduction" },
-  "product.co2.desc": { bg: "По-малко данни — по-нисък въглероден отпечатък.", en: "Less data — lower carbon footprint." },
+  "product.co2.desc": { bg: "По-малко данни – по-нисък въглероден отпечатък.", en: "Less data – lower carbon footprint." },
   "product.space.title": { bg: "Освободено пространство", en: "Freed Space" },
   "product.space.desc": { bg: "Оптимизирайте сървърите и намалете разходите.", en: "Optimize servers and reduce costs." },
   "product.employees.title": { bg: "Ангажирани служители", en: "Engaged Employees" },
