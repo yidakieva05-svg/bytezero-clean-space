@@ -16,7 +16,7 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 bg-background/80 backdrop-blur-md border-b border-border/30"
     >
-      <img src={logo} alt="ByteZero" className="h-8" />
+      <img src={logo} alt="ByteZero" className="h-6 w-auto" />
 
       <div className="hidden md:flex items-center gap-8">
         {navLinks.map((link) => (
