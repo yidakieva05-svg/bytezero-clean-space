@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="sm:hidden text-foreground p-1"
+          className="md:hidden text-foreground p-1"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
