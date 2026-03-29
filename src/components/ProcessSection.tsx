@@ -4,17 +4,14 @@ const steps = [
   {
     title: "Свържете се с нас",
     items: ["Безплатна консултация", "Анализ на нуждите", "Индивидуален план"],
-    side: "left" as const,
   },
   {
     title: "Сканиране",
     items: ["Пълен одит на имейли", "Анализ на файлове", "Обсъждане на оферта и цена"],
-    side: "left" as const,
   },
   {
     title: "Завършване на процеса",
     items: ["Подписване на договор", "Оптимизация на сървъри", "Намаляване на въглеродния отпечатък"],
-    side: "right" as const,
   },
 ];
 
@@ -38,15 +35,17 @@ const ProcessSection = () => {
           {/* Timeline line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
 
-          {steps.map((step, index) => (
+          {steps.map((step, index) => {
+            const side = index % 2 === 0 ? "left" : "right";
+            return (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, x: step.side === "left" ? -50 : 50 }}
+              initial={{ opacity: 0, x: side === "left" ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className={`relative flex items-start mb-16 ${
-                step.side === "right" ? "justify-end" : "justify-start"
+                side === "right" ? "justify-end" : "justify-start"
               }`}
             >
               {/* Dot on timeline */}
@@ -58,7 +57,7 @@ const ProcessSection = () => {
 
               <motion.div
                 className={`w-5/12 glass-card p-6 cursor-default ${
-                  step.side === "right" ? "ml-auto" : ""
+                  side === "right" ? "ml-auto" : ""
                 }`}
                 whileHover={{
                   y: -5,
@@ -81,7 +80,8 @@ const ProcessSection = () => {
                 </ul>
               </motion.div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
