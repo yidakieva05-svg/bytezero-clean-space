@@ -37,7 +37,7 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop nav */}
-      <div className="hidden md:flex items-center gap-8">
+      <div className="hidden lg:flex items-center gap-8">
         <motion.button
           onClick={toggleLang}
           whileHover={{ y: -2, scale: 1.05 }}
