@@ -29,7 +29,7 @@ const ProductSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
           whileHover={{ scale: 1.02, boxShadow: "0 0 40px hsl(72 85% 62% / 0.15)" }}
-          className="max-w-3xl mx-auto bg-card/60 backdrop-blur-sm border border-primary/20 rounded-2xl p-10 md:p-14 transition-colors duration-300"
+          className="max-w-3xl mx-auto bg-card/60 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-10 md:p-14 transition-colors duration-300"
         >
           <p className="text-muted-foreground text-lg md:text-xl leading-relaxed text-center">
             {t("product.desc1")}{" "}

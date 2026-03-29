@@ -31,7 +31,7 @@ const CTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-3xl md:text-5xl font-bold max-w-2xl mx-auto leading-tight"
+          className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold max-w-2xl mx-auto leading-tight"
         >
           {t("cta.title1")}
           <br />

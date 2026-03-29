@@ -80,7 +80,7 @@ const ProcessSection = () => {
                 />
 
                 <motion.div
-                  className={`w-5/12 glass-card p-6 cursor-default ${side === "right" ? "ml-auto" : ""}`}
+                  className={`w-full sm:w-5/12 glass-card p-6 cursor-default ${side === "right" ? "sm:ml-auto" : ""}`}
                   whileHover={{ y: -8, scale: 1.02, boxShadow: "0 0 40px hsl(72 85% 62% / 0.15)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
