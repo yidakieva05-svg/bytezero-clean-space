@@ -7,6 +7,21 @@ const About = () => {
       <Navbar />
       <section className="pt-32 pb-24 px-8">
         <div className="container mx-auto max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mb-8"
+          >
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Назад
+            </Link>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -45,7 +60,7 @@ const About = () => {
                 Какво ни отличава?
               </h3>
               <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                За разлика от нашата конкуренция, която измерва данни, но не променя поведението на служителите — ние целим точно това с нашия продукт. Нашата мисия е да променим настройката на потребителя към по-добра дигитална хигиена.
+                За разлика от нашата конкуренция, която измерва данни, но не променя поведението на служителите, ние целим точно това с нашия продукт. Нашата мисия е да променим настройката на потребителя към по-добра дигитална хигиена.
               </p>
             </motion.div>
           </div>
