@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const CTASection = () => {
   return (
     <section
-      id="contact"
+      id="cta"
       className="relative py-28 overflow-hidden"
     >
       {/* Curved top divider */}
