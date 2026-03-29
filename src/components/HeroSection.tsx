@@ -5,9 +5,9 @@ const HeroSection = () => {
   const { t } = useLang();
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 px-4 sm:px-0 overflow-hidden">
       <motion.div
-        className="absolute top-32 right-20 w-16 h-16 bg-primary/20 rounded-sm"
+        className="absolute top-32 right-4 sm:right-20 w-10 sm:w-16 h-10 sm:h-16 bg-primary/20 rounded-sm hidden sm:block"
         animate={{ rotate: [0, 90, 90, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -22,13 +22,13 @@ const HeroSection = () => {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-4 sm:px-8">
         <div className="max-w-2xl">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-heading text-5xl md:text-7xl font-bold leading-[1.1] mb-6"
+            className="font-heading text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6"
           >
             {t("hero.title1")}{" "}
             <br />
@@ -41,7 +41,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-muted-foreground text-lg max-w-md mb-8 leading-relaxed"
+            className="text-muted-foreground text-base sm:text-lg max-w-md mb-8 leading-relaxed"
           >
             {t("hero.desc")}
           </motion.p>

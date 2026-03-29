@@ -12,14 +12,14 @@ const TrustSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-8">
+    <section id="about" className="py-16 sm:py-24 relative">
+      <div className="container mx-auto px-4 sm:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-3xl md:text-4xl font-bold mb-16"
+          className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-16"
         >
           {t("trust.title")}
         </motion.h2>

@@ -5,7 +5,7 @@ const CTASection = () => {
   const { t } = useLang();
 
   return (
-    <section id="cta" className="relative py-28 overflow-hidden">
+    <section id="cta" className="relative py-16 sm:py-28 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 -translate-y-[99%]">
         <svg viewBox="0 0 1440 100" fill="none" className="w-full">
           <path d="M0,0 Q720,100 1440,0 L1440,100 L0,100 Z" fill="hsl(140 20% 12%)" />
@@ -25,13 +25,13 @@ const CTASection = () => {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container mx-auto px-8 relative z-10 text-center">
+      <div className="container mx-auto px-4 sm:px-8 relative z-10 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-3xl md:text-5xl font-bold max-w-2xl mx-auto leading-tight"
+          className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold max-w-2xl mx-auto leading-tight"
         >
           {t("cta.title1")}
           <br />

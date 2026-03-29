@@ -7,8 +7,8 @@ const Footer = () => {
   const { t } = useLang();
 
   return (
-    <footer id="contact" className="bg-card border-t border-border/30 pt-16 pb-8">
-      <div className="container mx-auto px-8">
+    <footer id="contact" className="bg-card border-t border-border/30 pt-12 sm:pt-16 pb-8">
+      <div className="container mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

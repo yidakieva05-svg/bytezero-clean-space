@@ -20,14 +20,14 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-card relative">
-      <div className="container mx-auto px-8">
+    <section id="services" className="py-16 sm:py-24 bg-card relative">
+      <div className="container mx-auto px-4 sm:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-3xl md:text-4xl font-bold text-center mb-20"
+          className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 sm:mb-20"
         >
           {t("process.title1")}
           <br />
@@ -35,8 +35,9 @@ const ProcessSection = () => {
         </motion.h2>
 
         <div className="relative max-w-3xl mx-auto">
+          {/* Timeline line - hidden on mobile */}
           <motion.div
-            className="absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 -translate-x-1/2 origin-top"
+            className="absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 -translate-x-1/2 origin-top hidden sm:block"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
@@ -48,14 +49,14 @@ const ProcessSection = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: side === "left" ? -60 : 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 0, y: 30 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.25 }}
-                className={`relative flex items-start mb-16 ${side === "right" ? "justify-end" : "justify-start"}`}
+                className={`relative flex items-start mb-10 sm:mb-16 ${side === "right" ? "sm:justify-end" : "sm:justify-start"} justify-center`}
               >
                 <motion.div
-                  className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full z-10"
+                  className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full z-10 hidden sm:block"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -70,7 +71,7 @@ const ProcessSection = () => {
                 </motion.div>
 
                 <motion.div
-                  className={`absolute top-1.5 h-px bg-primary/20 w-[8.33%] ${side === "left" ? "right-1/2" : "left-1/2"}`}
+                  className={`absolute top-1.5 h-px bg-primary/20 w-[8.33%] hidden sm:block ${side === "left" ? "right-1/2" : "left-1/2"}`}
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -79,7 +80,7 @@ const ProcessSection = () => {
                 />
 
                 <motion.div
-                  className={`w-5/12 glass-card p-6 cursor-default ${side === "right" ? "ml-auto" : ""}`}
+                  className={`w-full sm:w-5/12 glass-card p-6 cursor-default ${side === "right" ? "sm:ml-auto" : ""}`}
                   whileHover={{ y: -8, scale: 1.02, boxShadow: "0 0 40px hsl(72 85% 62% / 0.15)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
