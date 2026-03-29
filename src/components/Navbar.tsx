@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.svg";
 
 const navLinks = [
   { label: "За нас", href: "#about" },
