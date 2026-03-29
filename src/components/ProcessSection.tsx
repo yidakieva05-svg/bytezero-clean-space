@@ -71,7 +71,7 @@ const ProcessSection = () => {
                 </motion.div>
 
                 <motion.div
-                  className={`absolute top-1.5 h-px bg-primary/20 w-[8.33%] ${side === "left" ? "right-1/2" : "left-1/2"}`}
+                  className={`absolute top-1.5 h-px bg-primary/20 w-[8.33%] hidden sm:block ${side === "left" ? "right-1/2" : "left-1/2"}`}
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
