@@ -37,7 +37,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden sm:flex items-center gap-3 sm:gap-8">
+        <div className="hidden md:flex items-center gap-3 md:gap-8">
           <motion.button
             onClick={toggleLang}
             whileHover={{ y: -2, scale: 1.05 }}
@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="sm:hidden text-foreground p-1"
+          className="md:hidden text-foreground p-1"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -88,7 +88,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[57px] left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30 flex flex-col items-center gap-5 py-6 sm:hidden"
+            className="fixed top-[57px] left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30 flex flex-col items-center gap-5 py-6 md:hidden"
           >
             <button
               onClick={toggleLang}
