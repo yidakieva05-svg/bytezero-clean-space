@@ -8,7 +8,8 @@ import { useLang } from "@/lib/i18n";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false); // State to track if mobile menu is open
+  const [isOpen, setIsOpen] = useState(false);
+  const { lang, toggleLang, t } = useLang();
 
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
