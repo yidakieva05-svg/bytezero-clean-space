@@ -35,8 +35,9 @@ const ProcessSection = () => {
         </motion.h2>
 
         <div className="relative max-w-3xl mx-auto">
+          {/* Timeline line - hidden on mobile */}
           <motion.div
-            className="absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 -translate-x-1/2 origin-top"
+            className="absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 -translate-x-1/2 origin-top hidden sm:block"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
@@ -48,11 +49,11 @@ const ProcessSection = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: side === "left" ? -60 : 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 0, y: 30 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.25 }}
-                className={`relative flex items-start mb-16 ${side === "right" ? "justify-end" : "justify-start"}`}
+                className={`relative flex items-start mb-10 sm:mb-16 ${side === "right" ? "sm:justify-end" : "sm:justify-start"} justify-center`}
               >
                 <motion.div
                   className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full z-10"
