@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Importing the hamburger and close icons
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.svg";
+import { useLang } from "@/lib/i18n";
 
 const Navbar = () => {
   const navigate = useNavigate();
