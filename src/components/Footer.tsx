@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, Linkedin, Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo.svg";
+import { useLang } from "@/lib/i18n";
 
 const Footer = () => {
+  const { t } = useLang();
+
   return (
     <footer id="contact" className="bg-card border-t border-border/30 pt-16 pb-8">
       <div className="container mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -16,33 +18,26 @@ const Footer = () => {
           >
             <img src={logo} alt="ByteZero" className="h-6 w-auto mb-4" />
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-              Намаляваме дигиталния въглероден отпечатък и оптимизираме облачната ти инфраструктура.
+              {t("footer.desc")}
             </p>
           </motion.div>
 
-          {/* Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="font-heading font-semibold text-sm mb-4 tracking-wide">Контакти</h3>
+            <h3 className="font-heading font-semibold text-sm mb-4 tracking-wide">{t("footer.contacts")}</h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="tel:+359000000000"
-                  className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors"
-                >
+                <a href="tel:+359000000000" className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors">
                   <Phone className="w-4 h-4" />
                   +359 00 000 0000
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:bytezero.contactus@gmail.com"
-                  className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors"
-                >
+                <a href="mailto:bytezero.contactus@gmail.com" className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors">
                   <Mail className="w-4 h-4" />
                   bytezero.contactus@gmail.com
                 </a>
@@ -50,14 +45,13 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Social */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="font-heading font-semibold text-sm mb-4 tracking-wide">Социални мрежи</h3>
+            <h3 className="font-heading font-semibold text-sm mb-4 tracking-wide">{t("footer.social")}</h3>
             <div className="flex gap-3">
               {[
                 { icon: Facebook, href: "#", label: "Facebook" },
@@ -81,7 +75,7 @@ const Footer = () => {
 
         <div className="border-t border-border/30 pt-6 text-center">
           <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} ByteZero. Всички права запазени.
+            © {new Date().getFullYear()} ByteZero. {t("footer.rights")}
           </p>
         </div>
       </div>

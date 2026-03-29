@@ -1,21 +1,24 @@
 import { motion } from "framer-motion";
-
-const steps = [
-  {
-    title: "Свържете се с нас",
-    items: ["Безплатна консултация", "Анализ на нуждите", "Индивидуален план"],
-  },
-  {
-    title: "Сканиране",
-    items: ["Пълен одит на имейли", "Анализ на файлове", "Обсъждане на оферта и цена"],
-  },
-  {
-    title: "Завършване на процеса",
-    items: ["Подписване на договор", "Оптимизация на сървъри", "Намаляване на въглеродния отпечатък"],
-  },
-];
+import { useLang } from "@/lib/i18n";
 
 const ProcessSection = () => {
+  const { t } = useLang();
+
+  const steps = [
+    {
+      title: t("process.step1.title"),
+      items: [t("process.step1.item1"), t("process.step1.item2"), t("process.step1.item3")],
+    },
+    {
+      title: t("process.step2.title"),
+      items: [t("process.step2.item1"), t("process.step2.item2"), t("process.step2.item3")],
+    },
+    {
+      title: t("process.step3.title"),
+      items: [t("process.step3.item1"), t("process.step3.item2"), t("process.step3.item3")],
+    },
+  ];
+
   return (
     <section id="services" className="py-24 bg-card relative">
       <div className="container mx-auto px-8">
@@ -26,13 +29,12 @@ const ProcessSection = () => {
           transition={{ duration: 0.6 }}
           className="font-heading text-3xl md:text-4xl font-bold text-center mb-20"
         >
-          Подобри резултатите
+          {t("process.title1")}
           <br />
-          си с нас!
+          {t("process.title2")}
         </motion.h2>
 
         <div className="relative max-w-3xl mx-auto">
-          {/* Animated timeline line */}
           <motion.div
             className="absolute left-1/2 top-0 bottom-0 w-px bg-primary/30 -translate-x-1/2 origin-top"
             initial={{ scaleY: 0 }}
@@ -45,16 +47,13 @@ const ProcessSection = () => {
             const side = index % 2 === 0 ? "left" : "right";
             return (
               <motion.div
-                key={step.title}
+                key={index}
                 initial={{ opacity: 0, x: side === "left" ? -60 : 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.25 }}
-                className={`relative flex items-start mb-16 ${
-                  side === "right" ? "justify-end" : "justify-start"
-                }`}
+                className={`relative flex items-start mb-16 ${side === "right" ? "justify-end" : "justify-start"}`}
               >
-                {/* Animated dot on timeline */}
                 <motion.div
                   className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full z-10"
                   initial={{ scale: 0 }}
@@ -63,7 +62,6 @@ const ProcessSection = () => {
                   transition={{ duration: 0.4, delay: index * 0.25 + 0.3, type: "spring", stiffness: 400 }}
                   whileHover={{ scale: 1.8 }}
                 >
-                  {/* Pulse ring */}
                   <motion.div
                     className="absolute inset-0 rounded-full bg-primary/40"
                     animate={{ scale: [1, 2.5], opacity: [0.6, 0] }}
@@ -71,11 +69,8 @@ const ProcessSection = () => {
                   />
                 </motion.div>
 
-                {/* Connector line from dot to card */}
                 <motion.div
-                  className={`absolute top-1.5 h-px bg-primary/20 w-[8.33%] ${
-                    side === "left" ? "right-1/2" : "left-1/2"
-                  }`}
+                  className={`absolute top-1.5 h-px bg-primary/20 w-[8.33%] ${side === "left" ? "right-1/2" : "left-1/2"}`}
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -84,14 +79,8 @@ const ProcessSection = () => {
                 />
 
                 <motion.div
-                  className={`w-5/12 glass-card p-6 cursor-default ${
-                    side === "right" ? "ml-auto" : ""
-                  }`}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                    boxShadow: "0 0 40px hsl(72 85% 62% / 0.15)",
-                  }}
+                  className={`w-5/12 glass-card p-6 cursor-default ${side === "right" ? "ml-auto" : ""}`}
+                  whileHover={{ y: -8, scale: 1.02, boxShadow: "0 0 40px hsl(72 85% 62% / 0.15)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <motion.div
@@ -99,17 +88,13 @@ const ProcessSection = () => {
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <span className="text-primary font-heading font-bold text-sm">
-                      {index + 1}
-                    </span>
+                    <span className="text-primary font-heading font-bold text-sm">{index + 1}</span>
                   </motion.div>
-                  <h3 className="font-heading font-semibold text-primary text-sm mb-3 tracking-wide">
-                    {step.title}
-                  </h3>
+                  <h3 className="font-heading font-semibold text-primary text-sm mb-3 tracking-wide">{step.title}</h3>
                   <ul className="space-y-2">
                     {step.items.map((item, itemIndex) => (
                       <motion.li
-                        key={item}
+                        key={itemIndex}
                         initial={{ opacity: 0, x: side === "left" ? -20 : 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}

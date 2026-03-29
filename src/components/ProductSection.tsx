@@ -1,6 +1,15 @@
 import { motion } from "framer-motion";
+import { useLang } from "@/lib/i18n";
 
 const ProductSection = () => {
+  const { t } = useLang();
+
+  const benefits = [
+    { icon: "🌱", titleKey: "product.co2.title" as const, descKey: "product.co2.desc" as const },
+    { icon: "💾", titleKey: "product.space.title" as const, descKey: "product.space.desc" as const },
+    { icon: "👥", titleKey: "product.employees.title" as const, descKey: "product.employees.desc" as const },
+  ];
+
   return (
     <section className="py-24 bg-[hsl(140,25%,8%)] relative overflow-hidden">
       <div className="container mx-auto px-8">
@@ -11,7 +20,7 @@ const ProductSection = () => {
           transition={{ duration: 0.6 }}
           className="font-heading text-3xl md:text-5xl font-bold text-center mb-12"
         >
-          Какъв е нашият <span className="text-primary">продукт?</span>
+          {t("product.title1")} <span className="text-primary">{t("product.title2")}</span>
         </motion.h2>
 
         <motion.div
@@ -23,18 +32,13 @@ const ProductSection = () => {
           className="max-w-3xl mx-auto bg-card/60 backdrop-blur-sm border border-primary/20 rounded-2xl p-10 md:p-14 transition-colors duration-300"
         >
           <p className="text-muted-foreground text-lg md:text-xl leading-relaxed text-center">
-            Нашият продукт е интелигентна система за{" "}
-            <span className="text-foreground font-semibold">разпознаване и маркиране на имейли</span>,
-            които ненужно натоварват сървърите на вашата организация. Чрез автоматизиран анализ
-            идентифицираме дигиталния баласт и предлагаме ясен план за действие.
+            {t("product.desc1")}{" "}
+            <span className="text-foreground font-semibold">{t("product.desc.bold")}</span>
+            {t("product.desc2")}
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { icon: "🌱", title: "Намаляване на CO₂", desc: "По-малко данни — по-нисък въглероден отпечатък." },
-              { icon: "💾", title: "Освободено пространство", desc: "Оптимизирайте сървърите и намалете разходите." },
-              { icon: "👥", title: "Ангажирани служители", desc: "Изграждане на култура за дигитална хигиена." },
-            ].map((item, i) => (
+            {benefits.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -45,8 +49,8 @@ const ProductSection = () => {
                 className="text-center p-4"
               >
                 <div className="text-4xl mb-3">{item.icon}</div>
-                <h3 className="font-heading font-semibold text-foreground mb-1">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
+                <h3 className="font-heading font-semibold text-foreground mb-1">{t(item.titleKey)}</h3>
+                <p className="text-muted-foreground text-sm">{t(item.descKey)}</p>
               </motion.div>
             ))}
           </div>
