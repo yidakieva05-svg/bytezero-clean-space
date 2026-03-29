@@ -3,7 +3,6 @@ import logo from "@/assets/logo.svg";
 
 const navLinks = [
   { label: "За нас", href: "#about" },
-  { label: "Услуги", href: "#services" },
   { label: "Контакти", href: "/contact" },
 ];
 
