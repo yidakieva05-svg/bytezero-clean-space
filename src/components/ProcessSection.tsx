@@ -56,7 +56,7 @@ const ProcessSection = () => {
                 className={`relative flex items-start mb-10 sm:mb-16 ${side === "right" ? "sm:justify-end" : "sm:justify-start"} justify-center`}
               >
                 <motion.div
-                  className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full z-10"
+                  className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full z-10 hidden sm:block"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
