@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import { ArrowLeft, Send } from "lucide-react";
+import { ArrowLeft, Send, Phone, Mail } from "lucide-react";
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -48,10 +48,36 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-muted-foreground text-lg mb-12 max-w-md"
+            className="text-muted-foreground text-lg mb-8 max-w-md"
           >
-            Попълни формата и ще се свържем с теб възможно най-скоро.
+            Попълни формата или се свържи директно с нас.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="glass-card p-6 mb-10 flex flex-col sm:flex-row gap-6"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                <Phone className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Телефон</p>
+                <a href="tel:+359000000000" className="text-sm font-medium text-foreground hover:text-primary transition-colors">+359 00 000 0000</a>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Имейл</p>
+                <a href="mailto:bytezero.contactus@gmail.com" className="text-sm font-medium text-foreground hover:text-primary transition-colors">bytezero.contactus@gmail.com</a>
+              </div>
+            </div>
+          </motion.div>
 
           {submitted ? (
             <motion.div
