@@ -30,14 +30,14 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5 bg-background/80 backdrop-blur-md border-b border-border/30"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-3 sm:px-5 lg:px-8 py-3 sm:py-4 bg-background/80 backdrop-blur-md border-b border-border/30"
       >
         <Link to="/">
           <img src={logo} alt="ByteZero" className="h-5 sm:h-6 w-auto" />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-3 md:gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-8">
           <motion.button
             onClick={toggleLang}
             whileHover={{ y: -2, scale: 1.05 }}
@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-foreground p-1"
+          className="lg:hidden text-foreground p-1"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -88,7 +88,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[57px] left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30 flex flex-col items-center gap-5 py-6 md:hidden"
+            className="fixed top-[53px] sm:top-[57px] left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30 flex flex-col items-center gap-5 py-6 lg:hidden"
           >
             <button
               onClick={toggleLang}
