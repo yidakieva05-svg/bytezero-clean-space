@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.svg";
+import { useLang } from "@/lib/i18n";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { lang, toggleLang, t } = useLang();
 
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -30,12 +32,22 @@ const Navbar = () => {
       </Link>
 
       <div className="hidden md:flex items-center gap-8">
+        <motion.button
+          onClick={toggleLang}
+          whileHover={{ y: -2, scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="text-xs font-heading font-semibold px-3 py-1.5 rounded-md border border-primary/40 text-primary hover:bg-primary/10 transition-colors duration-300 tracking-wide"
+        >
+          {lang === "bg" ? "EN" : "BG"}
+        </motion.button>
+
         <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 300 }}>
           <Link
             to="/about"
             className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 relative group"
           >
-            За нас
+            {t("nav.about")}
             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
           </Link>
         </motion.div>
@@ -47,7 +59,7 @@ const Navbar = () => {
           whileHover={{ y: -2 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          Контакти
+          {t("nav.contacts")}
           <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
         </motion.a>
       </div>

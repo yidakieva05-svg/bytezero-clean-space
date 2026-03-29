@@ -2,8 +2,11 @@ import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 const About = () => {
+  const { t } = useLang();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -20,7 +23,7 @@ const About = () => {
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Назад
+              {t("about.back")}
             </Link>
           </motion.div>
 
@@ -30,7 +33,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center"
           >
-            За нас
+            {t("about.title")}
           </motion.h1>
 
           <div className="space-y-8">
@@ -40,7 +43,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-muted-foreground leading-relaxed text-base md:text-lg"
             >
-              Повечето хора не осъзнават, че ежедневните им дигитални навици създават реален дигитален отпечатък. В мащаб това води до значителна неефективност, разходи и скрито въздействие върху околната среда. Смятаме, че сме нужни на компаниите повече от всякога, поради ръст на разходите за облачни пространства и памет и натиск за отчитане на устойчивостта.
+              {t("about.p1")}
             </motion.p>
 
             <motion.p
@@ -49,7 +52,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-muted-foreground leading-relaxed text-base md:text-lg"
             >
-              Дигиталният отпечатък расте все повече и повече, но няма инструмент за поведенчески контрол.
+              {t("about.p2")}
             </motion.p>
 
             <motion.div
@@ -59,10 +62,10 @@ const About = () => {
               className="bg-muted/30 border border-border/40 rounded-2xl p-6 md:p-8"
             >
               <h3 className="font-heading font-semibold text-sm mb-3 text-primary tracking-wide">
-                Какво ни отличава?
+                {t("about.diff.title")}
               </h3>
               <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                За разлика от нашата конкуренция, която измерва данни, но не променя поведението на служителите, ние целим точно това с нашия продукт. Нашата мисия е да променим настройката на потребителя към по-добра дигитална хигиена.
+                {t("about.diff.desc")}
               </p>
             </motion.div>
           </div>

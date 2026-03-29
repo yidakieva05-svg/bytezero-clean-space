@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useLang } from "@/lib/i18n";
 
 const HeroSection = () => {
+  const { t } = useLang();
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Decorative elements */}
       <motion.div
         className="absolute top-32 right-20 w-16 h-16 bg-primary/20 rounded-sm"
         animate={{ rotate: [0, 90, 90, 0], scale: [1, 1.1, 1] }}
@@ -28,11 +30,11 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="font-heading text-5xl md:text-7xl font-bold leading-[1.1] mb-6"
           >
-            Устойчивостта не{" "}
+            {t("hero.title1")}{" "}
             <br />
-            е разход.
+            {t("hero.title2")}
             <br />
-            <span className="text-primary">Тя е инвестиция.</span>
+            <span className="text-primary">{t("hero.title3")}</span>
           </motion.h1>
 
           <motion.p
@@ -41,8 +43,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-muted-foreground text-lg max-w-md mb-8 leading-relaxed"
           >
-            Ние намаляваме дигиталния ти въглероден отпечатък, като същевременно оптимизираме
-            сървърите ти за облачни услуги и повишаваме твоя ESG рейтинг.
+            {t("hero.desc")}
           </motion.p>
 
           <motion.a
@@ -54,24 +55,15 @@ const HeroSection = () => {
             whileTap={{ scale: 0.97 }}
             className="inline-block bg-primary text-primary-foreground font-heading font-semibold px-8 py-3.5 rounded-lg text-sm tracking-wide cursor-pointer"
           >
-            Започни днес
+            {t("hero.cta")}
           </motion.a>
         </div>
       </div>
 
-      {/* Curved divider */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" fill="none" className="w-full">
-          <path
-            d="M0,120 Q360,20 720,60 Q1080,100 1440,30 L1440,120 Z"
-            fill="hsl(140 25% 8%)"
-          />
-          <path
-            d="M0,120 Q360,20 720,60 Q1080,100 1440,30"
-            stroke="hsl(72 85% 62% / 0.4)"
-            strokeWidth="2"
-            fill="none"
-          />
+          <path d="M0,120 Q360,20 720,60 Q1080,100 1440,30 L1440,120 Z" fill="hsl(140 25% 8%)" />
+          <path d="M0,120 Q360,20 720,60 Q1080,100 1440,30" stroke="hsl(72 85% 62% / 0.4)" strokeWidth="2" fill="none" />
         </svg>
       </div>
     </section>
