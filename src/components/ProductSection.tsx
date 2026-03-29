@@ -11,8 +11,8 @@ const ProductSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-[hsl(140,25%,8%)] relative overflow-hidden">
-      <div className="container mx-auto px-8">
+    <section className="py-16 sm:py-24 bg-[hsl(140,25%,8%)] relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
