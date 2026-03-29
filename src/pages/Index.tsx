@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ProcessSection from "@/components/ProcessSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <ProcessSection />
       <TrustSection />
       <CTASection />
+      <Footer />
     </div>
   );
 };
