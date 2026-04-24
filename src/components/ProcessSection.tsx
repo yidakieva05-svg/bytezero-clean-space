@@ -20,8 +20,24 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-24 bg-card relative">
-      <div className="container mx-auto px-4 sm:px-8">
+    <section id="services" className="py-16 sm:py-24 bg-card relative overflow-hidden">
+      <motion.div
+        className="absolute top-20 right-6 sm:right-24 w-14 sm:w-20 h-14 sm:h-20 bg-primary/20 rounded-sm hidden sm:block"
+        animate={{ rotate: [0, 90, 90, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-40 right-48 w-10 h-10 bg-primary/30 rounded-sm hidden sm:block"
+        animate={{ y: [0, -20, 0], rotate: [0, 45, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.div
+        className="absolute bottom-32 left-6 sm:left-16 w-16 h-16 bg-primary/10 rounded-sm"
+        animate={{ y: [0, -25, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      <div className="container mx-auto px-4 sm:px-8 relative">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
