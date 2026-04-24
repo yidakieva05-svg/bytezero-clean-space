@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
+import { Sprout, Save, Users } from "lucide-react";
 import { useLang } from "@/lib/i18n";
+import type { LucideIcon } from "lucide-react";
 
 const ProductSection = () => {
   const { t } = useLang();
 
-  const benefits = [
-    { icon: "🌱", titleKey: "product.co2.title" as const, descKey: "product.co2.desc" as const },
-    { icon: "💾", titleKey: "product.space.title" as const, descKey: "product.space.desc" as const },
-    { icon: "👥", titleKey: "product.employees.title" as const, descKey: "product.employees.desc" as const },
+  const benefits: { Icon: LucideIcon; titleKey: any; descKey: any }[] = [
+    { Icon: Sprout, titleKey: "product.co2.title", descKey: "product.co2.desc" },
+    { Icon: Save, titleKey: "product.space.title", descKey: "product.space.desc" },
+    { Icon: Users, titleKey: "product.employees.title", descKey: "product.employees.desc" },
   ];
 
   return (
@@ -48,7 +50,9 @@ const ProductSection = () => {
                 whileHover={{ y: -6 }}
                 className="text-center p-4"
               >
-                <div className="text-4xl mb-3">{item.icon}</div>
+                <div className="flex justify-center mb-3">
+                  <item.Icon size={40} className="text-primary/80" strokeWidth={1.5} />
+                </div>
                 <h3 className="font-heading font-semibold text-foreground mb-1">{t(item.titleKey)}</h3>
                 <p className="text-muted-foreground text-sm">{t(item.descKey)}</p>
               </motion.div>
