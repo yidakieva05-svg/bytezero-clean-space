@@ -38,27 +38,27 @@ const ProductSection = () => {
             <span className="text-foreground font-semibold">{t("product.desc.bold")}</span>
             {t("product.desc2")}
           </p>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {benefits.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
-                whileHover={{ y: -6 }}
-                className="text-center p-4"
-              >
-                <div className="flex justify-center mb-3">
-                  <item.Icon size={40} className="text-primary/80" strokeWidth={1.5} />
-                </div>
-                <h3 className="font-heading font-semibold text-foreground mb-1">{t(item.titleKey)}</h3>
-                <p className="text-muted-foreground text-sm">{t(item.descKey)}</p>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
+
+        <div className="max-w-3xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {benefits.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
+              whileHover={{ y: -6 }}
+              className="text-center p-4"
+            >
+              <div className="flex justify-center mb-3">
+                <item.Icon size={40} className="text-primary/80" strokeWidth={1.5} />
+              </div>
+              <h3 className="font-heading font-semibold text-foreground mb-1">{t(item.titleKey)}</h3>
+              <p className="text-muted-foreground text-sm">{t(item.descKey)}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
