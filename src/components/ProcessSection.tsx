@@ -22,12 +22,12 @@ const ProcessSection = () => {
   return (
     <section id="services" className="py-16 sm:py-24 bg-card relative overflow-hidden">
       <motion.div
-        className="absolute top-1/2 right-6 sm:right-24 w-14 sm:w-20 h-14 sm:h-20 bg-primary/20 rounded-sm hidden sm:block"
+        className="absolute top-56 right-6 sm:right-24 w-14 sm:w-20 h-14 sm:h-20 bg-primary/20 rounded-sm hidden sm:block"
         animate={{ rotate: [0, 90, 90, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-[55%] right-48 w-10 h-10 bg-primary/30 rounded-sm hidden sm:block"
+        className="absolute top-72 right-48 w-10 h-10 bg-primary/30 rounded-sm hidden sm:block"
         animate={{ y: [0, -20, 0], rotate: [0, 45, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
