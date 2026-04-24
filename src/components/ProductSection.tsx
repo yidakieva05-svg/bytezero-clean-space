@@ -13,3 +13,6 @@ const ProductSection = () => {
     { Icon: Users, titleKey: "product.employees.title" as const, descKey: "product.employees.desc" as const },
   ];
 
+  return (
+    <section className="py-16 sm:py-24 bg-[hsl(140,25%,8%)] relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-8">
