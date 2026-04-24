@@ -29,7 +29,7 @@ const translations = {
     en: "identifying and flagging emails",
   },
   "product.desc2": {
-    bg: ", които ненужно натоварват сървърите на вашата организация. Чрез автоматизиран анализ идентифицираме дигиталния баласт и предлагаме ясен план за действие.",
+    bg: ", които излишно натоварват сървърите на твоята организация. Чрез автоматизиран анализ идентифицираме дигиталния баласт и предлагаме ясен план за действие.",
     en: " that unnecessarily burden your organization's servers. Through automated analysis, we identify digital waste and offer a clear action plan.",
   },
   "product.co2.title": { bg: "Намаляване на CO₂", en: "CO₂ Reduction" },
